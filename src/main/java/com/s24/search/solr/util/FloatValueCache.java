@@ -7,7 +7,7 @@ import org.apache.lucene.util.Accountable;
  * 
  * @author Shopping24 GmbH, Torsten Bøgh Köster (@tboeghk)
  */
-public interface FloatValueCache extends Accountable {
+public strictfp interface FloatValueCache extends Accountable {
 
    int size();
    

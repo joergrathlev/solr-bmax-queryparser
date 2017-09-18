@@ -31,7 +31,7 @@ import org.apache.solr.util.SolrPluginUtils;
  * mainly intended to be used as the query parser for a boost term query in combination with the bmax query parser for
  * the main query.
  */
-public class TermInspectingDismaxQParser extends QParser {
+public strictfp class TermInspectingDismaxQParser extends QParser {
 
    private static final String WILDCARD = "*:*";
 

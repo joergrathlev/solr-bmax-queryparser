@@ -49,7 +49,7 @@ import com.s24.search.solr.util.BmaxDebugInfo;
 import eu.danieldk.dictomaton.DictionaryBuilder;
 import eu.danieldk.dictomaton.DictionaryBuilderException;
 
-public class BmaxQueryParser extends ExtendedDismaxQParser {
+public strictfp class BmaxQueryParser extends ExtendedDismaxQParser {
 
    private static final Logger log = LoggerFactory.getLogger(BmaxQueryParser.class);
 

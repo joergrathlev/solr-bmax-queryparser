@@ -14,7 +14,7 @@ import org.apache.lucene.util.RamUsageEstimator;
  * 
  * @author Shopping24 GmbH, Torsten Bøgh Köster (@tboeghk)
  */
-public class FloatArrayValueCache implements FloatValueCache {
+public strictfp class FloatArrayValueCache implements FloatValueCache {
 
    private final float[] cache;
 

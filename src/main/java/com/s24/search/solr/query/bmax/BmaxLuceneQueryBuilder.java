@@ -38,7 +38,7 @@ import com.s24.search.solr.query.bmax.BmaxQuery.BmaxTerm;
  *
  * @author Shopping24 GmbH, Torsten Bøgh Köster (@tboeghk)
  */
-public class BmaxLuceneQueryBuilder {
+public strictfp class BmaxLuceneQueryBuilder {
 
    private final static float USER_QUERY_FIELD_BOOST = 1.0f;
 

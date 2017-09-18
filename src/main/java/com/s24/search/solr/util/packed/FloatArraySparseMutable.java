@@ -4,7 +4,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.s24.search.solr.util.FloatValueCache;
 
-public class FloatArraySparseMutable extends LongArraySparseMutable implements FloatValueCache {
+public strictfp class FloatArraySparseMutable extends LongArraySparseMutable implements FloatValueCache {
 
    public static final int DEFAULT_PRECISION = 10000;
 

@@ -36,7 +36,7 @@ import com.s24.search.solr.util.BmaxDebugInfo;
  *
  * @author Shopping24 GmbH, Torsten Bøgh Köster (@tboeghk)
  */
-public class BmaxBoostTermComponent extends SearchComponent {
+public strictfp class BmaxBoostTermComponent extends SearchComponent {
 
    public static final String COMPONENT_NAME = "bmax.booster";
 
@@ -157,7 +157,7 @@ public class BmaxBoostTermComponent extends SearchComponent {
       }
 
       // check penalizes
-      if (penalize && rb.req.getParams().get("rq") == null) {
+      if (penalize) {
          Collection<CharSequence> terms = Terms.collect(q, penalizeAnalyzer);
 
          // add extra terms
@@ -167,8 +167,8 @@ public class BmaxBoostTermComponent extends SearchComponent {
 
          // add boosts
          if (!terms.isEmpty()) {
-            params.add("rq", String.format(Locale.US, "{!rerank reRankQuery=$rqq reRankDocs=%s reRankWeight=%.1f}",
-                  penalizeDocs, penalizeFactor));
+//            params.add("rq", String.format(Locale.US, "{!rerank reRankQuery=$rqq reRankDocs=%s reRankWeight=%.1f}",
+//                  penalizeDocs, penalizeFactor));
 
             // join terms once. save cpu.
             String joinedTerms = Joiner.on(" OR ").join(terms);
@@ -191,7 +191,7 @@ public class BmaxBoostTermComponent extends SearchComponent {
             }
 
             // append rerank query
-            params.add("rqq", rerank.toString());
+            params.add("bq", "(" + rerank.toString() + String.format(Locale.US, ")^%.2f", penalizeFactor));
 
             // add debug
             if (rb.isDebugQuery()) {

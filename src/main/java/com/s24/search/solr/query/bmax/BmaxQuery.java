@@ -16,7 +16,7 @@ import org.apache.solr.search.FieldParams;
  * 
  * @author Shopping24 GmbH, Torsten Bøgh Köster (@tboeghk)
  */
-public class BmaxQuery {
+public strictfp class BmaxQuery {
 
    // terms with their collected synonyms and subopics
    private final List<BmaxTerm> terms = Lists.newArrayList();
